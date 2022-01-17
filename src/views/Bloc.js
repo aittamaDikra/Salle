@@ -24,9 +24,17 @@ import {Card, CardBody, CardHeader, CardTitle, Col, Form, FormGroup, Row} from "
 
 function Bloc() {
     const [show, setShow] = useState(false);
+    const [a, seta] = useState(false);
+    const [i, seti] = useState(false);
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const handleShow = (i,a) => {
+        seta(a);
+        seti(i);
+        setShow(true);
+
+    }
     const [name, setName] = useState('');
     const postData = () => {
         axios.post(`https://gestionsalles.herokuapp.com/blocs`, {
@@ -58,6 +66,7 @@ function Bloc() {
         console.log(APIData);
 
     }
+
 
     return (
         <>
